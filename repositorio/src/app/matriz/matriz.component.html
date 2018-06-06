@@ -26,13 +26,13 @@
   <div class="col-6">
     <h4>Tamaño de la matriz de coeficientes:</h4>&nbsp;&nbsp;<input class="form-control"  type="text" #m placeholder="3">
     <br>
-    Matriz de coeficientes:&nbsp;&nbsp; <input  class="form-control" type="text" #matrizcoef placeholder="{2,3.5,0.5,8,5,2,7,0.8660,8}">
+    Matriz de coeficientes:&nbsp;&nbsp; <input  class="form-control" type="text" #matrizcoef placeholder="2,3.5,0.5,8,5,2,7,0.8660,8">
     <br>
-    Matriz de resultados: &nbsp;&nbsp;<input class="form-control" type="text" #matrizresul placeholder="{30,580,10}">
+    Matriz de resultados: &nbsp;&nbsp;<input class="form-control" type="text" #matrizresul placeholder="30,580,10">
     <br>  
   </div>
   <div class="col-2">
-    <button class="btn btn-primary btn-lg btn-block"  type="button"  (click)=gaussJordan(m,matrizcoef.value,matrizresul.value)>Resolver</button>
+    <button class="btn btn-primary btn-lg btn-block"  type="button"  (click)=gaussJordan(m.value,matrizcoef.value,matrizresul.value)>Resolver</button>
   </div>
 </div>
 <br>
@@ -52,8 +52,8 @@
     Tamaño de las matrices:&nbsp;&nbsp;Filas:&nbsp;&nbsp;<input  class="form-control" type="text" #row placeholder="3"> 
     columnas:&nbsp;&nbsp;<input  class="form-control" type="text" #col placeholder="4">
   <br>
-    Matriz 1:&nbsp;&nbsp; <input  class="form-control" type="text" #matriz1sum placeholder="{2,3.5,0.5,8,5,2}">
-    Matriz 2: &nbsp;&nbsp;<input  class="form-control" type="text" #matriz2sum placeholder="{0.8660,8,4,3.2,2}">
+    Matriz 1:&nbsp;&nbsp; <input  class="form-control" type="text" #matriz1sum placeholder="2,3.5,0.5,8,5,2">
+    Matriz 2: &nbsp;&nbsp;<input  class="form-control" type="text" #matriz2sum placeholder="0.8660,8,4,3.2,2">
   </div>
   <div class="col-2">
       <br>
@@ -83,8 +83,8 @@
     Filas:&nbsp;&nbsp;<input class="form-control" type="text" #row2 placeholder="2">
     columnas:&nbsp;&nbsp;<input type="text" #col2 placeholder="3">
     <br>
-    Matriz 1:&nbsp;&nbsp; <input class="form-control" type="text" #matriz1prod placeholder="{2,3.5,0.5,8,5,2}">
-    Matriz 2: &nbsp;&nbsp;<input class="form-control"type="text" #matriz2prod placeholder="{0.8660,8,4,3.2,2}">
+    Matriz 1:&nbsp;&nbsp; <input class="form-control" type="text" #matriz1prod placeholder="2,3.5,0.5,8,5,2">
+    Matriz 2: &nbsp;&nbsp;<input class="form-control"type="text" #matriz2prod placeholder="0.8660,8,4,3.2,2">
   </div>
   <div class="col-2">
     <br>
