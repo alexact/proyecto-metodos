@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<head>
+
+<title>MATRICES</title>
+
+</head>
+
+<body>
+
+
+<form>
+<div >
+
+  <h2 style="text-align:center"> GAUSS JORDAN</h2>
+
+  <h4 style="text-align:center"> Escribe la matriz de coeficientes en posiciones 00,01,02,11,12,21,22,23</h4>
+
+  <div style="text-align:center">
+
+    <p>Ejemplo: (Recuerda que la matriz debe ser cuadrada, filas y columnas iguales)</p>
+    <p>2x+3.5y+1/2z=30</p>
+    <p>8x+5y+2z=580</p>
+    <p>7x+cos(30)y+8z=10</p>
+
+    </div>
+  <div class="col-6">
+    <h4>Tamaño de la matriz de coeficientes:</h4>&nbsp;&nbsp;<input class="form-control"  type="text" #m placeholder="3">
+    <br>
+    Matriz de coeficientes:&nbsp;&nbsp; <input  class="form-control" type="text" #matrizcoef placeholder="{2,3.5,0.5,8,5,2,7,0.8660,8}">
+    <br>
+    Matriz de resultados: &nbsp;&nbsp;<input class="form-control" type="text" #matrizresul placeholder="{30,580,10}">
+    <br>  
+  </div>
+  <div class="col-2">
+    <button class="btn btn-primary btn-lg btn-block"  type="button"  (click)=gaussJordan(m,matrizcoef.value,matrizresul.value)>Resolver</button>
+  </div>
+</div>
+<br>
+<div>
+  <h2 style="text-align:center"> SUMA Y RESTA DE MATRICES</h2>
+  <h4 style="text-align:center"> Escribe la matriz de coeficientes en posiciones 00,01,02,11,12,21,22,23</h4>
+  <div style="text-align:center">
+    <p>Ejemplo: (Recuerda que las matrices deben ser de igual tamaño)</p>
+    <p>2x+3.5y+1/2z</p>
+    <p>8x+5y+2z</p>
+    <p>7x+cos(30)y+8z</p>
+    <p>4x+3.2y+2z</p>
+  </div>
+  <br>
+  <div class="col-6">
+    OPCION DE SUMAR O RESTAR
+    Tamaño de las matrices:&nbsp;&nbsp;Filas:&nbsp;&nbsp;<input  class="form-control" type="text" #row placeholder="3"> 
+    columnas:&nbsp;&nbsp;<input  class="form-control" type="text" #col placeholder="4">
+  <br>
+    Matriz 1:&nbsp;&nbsp; <input  class="form-control" type="text" #matriz1sum placeholder="{2,3.5,0.5,8,5,2}">
+    Matriz 2: &nbsp;&nbsp;<input  class="form-control" type="text" #matriz2sum placeholder="{0.8660,8,4,3.2,2}">
+  </div>
+  <div class="col-2">
+      <br>
+    <button class="btn btn-primary btn-lg btn-block" (click)=sumaMatrices(row.value,col.value,matriz1sum.value,matriz2sum.value)>Resolver</button>
+  </div>
+</div>
+
+<div>
+  <br>
+  <h2> PRODUCTO DE MATRICES</h2>
+  <br>
+  <h4> Escribe la matriz de coeficientes en posiciones 00,01,02,11,12,21,22,23</h4>
+  <div style="text-align:center">
+    <p>Ejemplo:</p>
+    <p>2x+3.5y+1/2z</p>
+    <p>8x+5y+2z</p>
+    <p>7x+cos(30)y+8z</p>
+    <p>4x+3.2y+2z</p>
+  </div>
+  <br>
+  <div class="col-6">
+    Tamaño de las matriz 1:&nbsp;&nbsp;
+    Filas:&nbsp;&nbsp;<input class="form-control" type="text" #row1 placeholder="3">
+    columnas:&nbsp;&nbsp;<input class="form-control" type="text" #col1 placeholder="4">
+    <br>
+    Tamaño de las matriz 2:&nbsp;&nbsp;
+    Filas:&nbsp;&nbsp;<input class="form-control" type="text" #row2 placeholder="2">
+    columnas:&nbsp;&nbsp;<input type="text" #col2 placeholder="3">
+    <br>
+    Matriz 1:&nbsp;&nbsp; <input class="form-control" type="text" #matriz1prod placeholder="{2,3.5,0.5,8,5,2}">
+    Matriz 2: &nbsp;&nbsp;<input class="form-control"type="text" #matriz2prod placeholder="{0.8660,8,4,3.2,2}">
+  </div>
+  <div class="col-2">
+    <br>
+    <button class="btn btn-primary btn-lg btn-block" (click)=prodMatrices(matriz1prod.value,matriz2prod.value)>Resolver</button>
+  </div>
+</div>
+<br>
+<div>
+  <h2> PRODUCTO DE MATRICES</h2>
+  <h4> Escribe la matriz de coeficientes en posiciones 00,01,02,11,12,21,22,23</h4>
+  <br>
+  <div style="text-align:center">
+    <p>Ejemplo:</p>
+    <p>2x+3.5y+1/2z</p>
+    <p>8x+5y+2z</p>
+    <p>7x+cos(30)y+8z</p>
+    <p>4x+3.2y+2z</p>
+  </div>
+  <br>
+  <div class="col-6">
+    Tamaño de las matriz 1:&nbsp;&nbsp;
+    Filas:&nbsp;&nbsp;<input type="text" #row1 placeholder="3">
+    columnas:&nbsp;&nbsp;<input placeholder="4">
+    <br>
+    Tamaño de las matriz 2:&nbsp;&nbsp;Filas:&nbsp;&nbsp;<input type="text" #row2 placeholder="2">
+    columnas:&nbsp;&nbsp;<input class="form-control" type="text" #col2 placeholder="3">
+    <br>
+    Matriz 1:&nbsp;&nbsp; <input class="form-control" type="text" #matriz1prod placeholder="{2,3.5,0.5,8,5,2}">
+    <br>
+    Matriz 2: &nbsp;&nbsp;<input class="form-control" type="text" #matriz2prod placeholder="{0.8660,8,4,3.2,2}">
+  </div>
+  <div class="col-2">
+    <button class="btn btn-primary btn-lg btn-block" (click)=prodMatrices(matriz1prod.value,matriz2prod.value)>Resolver</button>
+  </div>
+</div>
+</form>
+
+
+</body>

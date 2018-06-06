@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CONVERSION BASES</title>  
+  </head>
+<body>
+    <div class="container">
+        <h2>Conversion de bases: binaria, decimal, octal y hexadecimal</h2>
+        <br>  
+        <br>  
+        <p>Seleccione en que base está representado el numero que digitará</p>
+    <form #f="ngForm" >
+      <div class="radio">
+        <label><input type="radio" name="optradio"  value="1" 
+          [(ngModel)]="optradio"
+          >Decimal(10)</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optradio"  value="2" 
+          [(ngModel)]="optradio"
+          >Binario(2)</label>
+      </div>
+      <div class="radio">
+          <label><input type="radio" name="optradio"  value="3" 
+            [(ngModel)]="optradio"
+            >Octal(8)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optradio"  value="4" 
+              [(ngModel)]="optradio"
+              >Hexadecimal(16)</label>
+          </div>
+          <div *ngIf="optradio=='1'">
+              <form>
+                  <div class="col-12" >
+                     <h4>Ingrese el decimal a convertir:</h4>
+                     <input type="text" class="form-control" #num placeholder="Ej: 2568 ">
+                  </div>
+                    <br>
+                    <button class="btn btn-primary btn-lg btn-block"  (click)="converBases(num.value, optradio)" 
+                    type="button">Convertir</button>  
+                    <div class="col-12">
+                      <br>
+                      <h3>Resultado Conversion de bases:</h3>
+                      <br>
+                      <h4> Decimal:  {{decimales}}   </h4>
+                      <h4> Binario:   {{binarios}}  </h4>
+                      <h4> Octal:  {{octales}}</h4>
+                      <h4> Hexadecimal: {{hexadecimales}}</h4>
+                      <br>
+                      <br>
+                    </div>
+              </form>
+            </div>
+            <div *ngIf="optradio=='2'">
+                <form>
+                    <div class="col-12" >
+                       <h4>Ingrese el binario a convertir:</h4>
+                       <input type="text" class="form-control" #num placeholder="Ej:10010 ">
+                    </div>
+                      <br>
+                      <button class="btn btn-primary btn-lg btn-block"  (click)="converBases(num.value, optbase)" 
+                      type="button">Convertir</button>  
+                      <div class="col-12">
+                        <br>
+                        <h3>Resultado Conversion de bases:</h3>
+                        <br>
+                        <h4> Decimal:     </h4>
+                        <h4> Binario:     </h4>
+                        <h4> Octal:</h4>
+                        <h4> Hexadecimal: </h4>
+                        <br>
+                        <br>
+                      </div>
+                </form>
+              </div>
+              <div *ngIf="optradio=='3'">
+                  <form>
+                      <div class="col-12" >
+                         <h4>Ingrese el octal a convertir:</h4>
+                         <input type="text" class="form-control" #num placeholder="Ej: 2567 ">
+                      </div>
+                        <br>
+                        <button class="btn btn-primary btn-lg btn-block"  (click)="converBases(num.value, optbase)" 
+                        type="button">Convertir</button>  
+                        <div class="col-12">
+                          <br>
+                          <h3>Resultado Conversion de bases:</h3>
+                          <br>
+                          <h4> Decimal:     </h4>
+                          <h4> Binario:     </h4>
+                          <h4> Octal:</h4>
+                          <h4> Hexadecimal: </h4>
+                          <br>
+                          <br>
+                        </div>
+                  </form>
+                </div>
+                <div *ngIf="optradio=='4'">
+                    <form>
+                        <div class="col-12" >
+                           <h4>Ingrese el Hexadecimal a convertir:</h4>
+                           <input type="text" class="form-control" #num placeholder="Ej: 68AF ">
+                        </div>
+                          <br>
+                          <button class="btn btn-primary btn-lg btn-block"  (click)="converBases(num.value, optbase)" 
+                          type="button">Convertir</button>  
+                          <div class="col-12">
+                            <br>
+                            <h3>Resultado Conversion de bases:</h3>
+                            <br>
+                            <h4> Decimal:     </h4>
+                            <h4> Binario:     </h4>
+                            <h4> Octal:</h4>
+                            <h4> Hexadecimal: </h4>
+                            <br>
+                            <br>
+                          </div>
+                    </form>
+                  </div>
+    </form>
+    </div>
+</body>
+  </html>
+
+
+

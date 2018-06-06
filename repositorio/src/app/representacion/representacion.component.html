@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>REPRESENTACION BASES</title>  
+  </head>
+<body>
+
+  <div class="container">
+    <h2>Representación de memoria IEEE 754 de 32bits y 64 bits</h2>
+    <br>  
+    <br>  
+    
+    <p>Seleccione una de las opciones para comenzar</p>
+    <form #f="ngForm" >
+      <div class="radio">
+        <label><input type="radio" name="optradio"  value="1" 
+          [(ngModel)]="optradio"
+          >Convertir numero decimal o binario a representacion de memoria IEEE 754</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optradio"  value="2" 
+          [(ngModel)]="optradio"
+          >Convertir representación de memoria IEEE 754 a numero decimal y binario</label>
+      </div>
+    </form>
+  </div>
+</body>
+<div *ngIf="optradio=='1'" >
+  <form>
+      <div class="col-12">
+         <h4>Ingrese el numero a convertir:</h4>
+         <input type="text" class="form-control" #num placeholder="Ej: 2568 ">
+      </div>
+      <div class="col-12">
+        <br>
+        <h4>Digite la base en la que se encuentra: (2)binaria o (10)decimal:</h4>
+        <div class="radio">
+          <label><input type="radio" name="optbase"  value="2" 
+            [(ngModel)]="optbase"
+            >Base binaria (2)</label>
+        </div>
+        <div class="radio">
+            <label><input type="radio" name="optbase"  value="10" 
+              [(ngModel)]="optbase"
+              >Base decimal (10)</label>
+        </div>
+      </div>
+      <br>
+        <button class="btn btn-primary btn-lg btn-block"  (click)="representa(num.value, optbase)" 
+        type="button">Convertir</button>  
+        <div class="col-12">
+          <br>
+          <h3>Memoria de 32:</h3>
+          <br>
+          <h4> signo:{{signo3}}     </h4>
+          <h4>exponente:  {{exponente3}}</h4>
+          <h4> mantisa:   {{mantisa3}}</h4>
+          <br>
+          <h4>completo: {{signo3}}   {{exponente3}}  {{mantisa3}} </h4>
+          <br>
+          <br>
+          <h3>Memoria de 64:</h3>
+          <br>
+          <h4> signo:{{signo6}}   </h4>
+          <h4> exponente:  {{exponente6}} </h4>
+          <h4> mantisa:   {{mantisa6}} </h4>
+          <br>
+          <h4> Completo: {{signo6}}    {{exponente6}}   {{mantisa6}} </h4>
+          <br>
+        </div>
+  </form>
+</div>
+<div *ngIf="optradio=='2'">
+  <form #f="ngForm">    
+    <div class="col-12">
+      <br>
+      <h4>Seleccione el tipo de memoria de la representación:</h4>
+      <div class="radio">
+          <label><input type="radio" name="optmemoria"  value="32" 
+            [(ngModel)]="optmemoria"
+            >32</label>
+      </div>
+      <div class="radio">
+        <label><input type="radio" name="optmemoria"  value="64" 
+            [(ngModel)]="optmemoria"
+            >64</label>
+      </div>
+        <br>
+        <h4>Seleccione el tipo el signo:</h4>
+      <div class="radio">
+          <label><input type="radio" name="optsigno"  value="0" 
+          [(ngModel)]="optsigno"
+          >0: Positivo</label>
+      </div>
+      <div class="radio">
+        <label><input  type="radio" name="optsigno"  value="1" 
+          [(ngModel)]="optsigno"
+          >1: Negativo</label>
+      </div>
+      <div class="col-12">
+        <br>
+        <h4>Digite el exponente:</h4>
+        <input type="text" class="form-control" #exponente placeholder="Ej: 10000010" >
+      </div>
+      <br>
+      <div class="col-12">
+        <br>
+        <h4>Digite la mantisa:</h4>
+        <input type="text" class="form-control" #mantisa placeholder="Ej: 01010000000000000000000" >
+      </div>
+      <br>
+      <button class="btn btn-primary btn-lg btn-block" 
+      (click)="inversa(optsigno, exponente.value, mantisa.value,optmemoria)" type="button">Convertir</button>        
+      <div class="col-12" >
+        <br>
+        <br>
+        <h4>Valor decimal: {{resultado.repre2.decimal}}</h4>
+        <h4>Valor binario: {{resultado.repre2.binario}}</h4>
+      </div>
+    </div>
+  </form>
+</div>
+</html>
+

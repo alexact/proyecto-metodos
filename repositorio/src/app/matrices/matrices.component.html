@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GAUSS JORDAN</title>
+    <!--link rel="stylesheet" href="css/stylesheet.css"--> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"> </script>
+    
+  </head>
+
+  <body>
+    introduzca el numero de columnas <input id="columnas" #x  type="text">
+  <br>
+  <br>
+    introduzca el número de filas    <input id="filas" #y type="text">
+  <br>
+  <button  id="btn" (click)="crearMatriz(x.value,y.value)">crear</button>
+  <div id="matrix"></div>
+
+    <div  *ngIf="x.value >='1'">
+        <table class="table" align="center">
+            <tbody>
+              <tr *ngFor="let m of matrizF" >              
+                <td  *ngFor="let i of matrizC"><input size="5" id="input" #{{i}}{{m}} type="text" placeholder={{i}}{{m}} (blur)="valoresMatriz1(im.value)">
+
+                </td>               
+              </tr>
+            </tbody>
+        </table>
+      <button id="btnlisto" (click)="valoresMatriz1(0)" >Solución</button>
+      <!--template *ngIf="btnlisto".click(function(){
+         *ngFor="let m of matrizF"{
+         *ngFor="let i of matrizC" {
+             valoresMatriz1(11.value)}}}>         
+      </template--> 
+    </div>
+    
+  </body>
+
+  <!--script>
+    var m;
+    var x;
+    var y;
+    var scope = new Array();
+    var values= new Array();
+    $("#btn").click(function(){
+      m=1;
+      y = $("#input1").val();
+      x = $("#input2").val();
+      $("#matrix").empty();
+      for (i = 0; i < x; i++) { 
+        for (j = 0; j < y; j++) {
+          $("#matrix").append("<input maxlength='10' type='text' class='cuadrito' id="+m+">");
+          m++;
+        } 
+        $("#matrix").append("<br>");
+      }
+    });
+
+    $("#btnlisto").click(function(){
+      var on=false;
+      for(i = 1; i < m; i++){
+        if($("#"+i).val()!=''){
+          on=true; 
+        }else{
+          alert("Debe rellenar todos las posiciones de la matriz");
+          on=false;
+          i=m;
+        }
+      }
+      if(on==true){
+        for(i = 1; i < m; i++){
+            values.push($("#"+i).val());
+        }
+        scope.push("A");
+        scope.push(values);
+        scope.push(y);
+        scope.push(x);
+        console.log(scope);
+     
+      }
+
+      
+    });
+  
+
+
+  </script>
+  <p>resu</p-->
+</html>
